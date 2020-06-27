@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('CategoryController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,12 +31,12 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('/categories/(:num)/edit', 'Home::edit/$1');
-$routes->get('/categories/(:num)', 'Home::show/$1');
-$routes->post('categories', 'Home::store');
-$routes->post('categories/(:num)', 'Home::update/$1');
-$routes->delete('categories/(:num)/delete', 'Home::destroy/$1');
+$routes->get('/', 'CategoryController::index');
+$routes->get('/categories/(:num)/edit', 'CategoryController::edit/$1');
+$routes->get('/categories/(:num)', 'CategoryController::show/$1');
+$routes->post('categories', 'CategoryController::store');
+$routes->post('categories/(:num)', 'CategoryController::update/$1');
+$routes->delete('categories/(:num)/delete', 'CategoryController::destroy/$1');
 
 /**
  * --------------------------------------------------------------------

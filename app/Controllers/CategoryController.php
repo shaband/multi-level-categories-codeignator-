@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Category;
 
-class Home extends BaseController
+class CategoryController extends BaseController
 {
 	protected $helpers = ['url', 'form'];
 	public $category;
